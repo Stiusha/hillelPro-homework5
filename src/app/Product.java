@@ -25,20 +25,13 @@ public class Product {
 
     @Override
     public String toString() {
-        return new StringBuilder().append("Product: ").append(this.name).append(", quota is ").append(this.quota)
-                .append(" ").append(Constants.MEASURE).append(", price is ").append(Constants.CURRENCY).append(" ")
-                .append(this.price).append(".").toString();
+        return String.format(
+                "Product: %s, quota is %d %s, price is %s %s.",
+                this.name,
+                this.quota,
+                Constants.MEASURE,
+                Constants.CURRENCY,
+                this.price
+        );
     }
-//Через String.format выглядит красивше)
-//    @Override
-//    public String toString() {
-//        return String.format(
-//                "Product: %s, quota is %d %s, price is %s %s.",
-//                this.name,
-//                this.quota,
-//                Constants.MEASURE,
-//                Constants.CURRENCY,
-//                this.price
-//        );
-//    }
 }
